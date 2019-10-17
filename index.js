@@ -25,10 +25,12 @@ function azarJugador2() {
     document.querySelectorAll("input")[1].value = `${array[aleat]}`
     return array[aleat]
 }
+let contadorVictorias = 0;
+let contadorDerrotas = 0;
+
 
 function resultadoJuego() {
-    let contadorVictorias = 0;
-    let contadorDerrotas = 0;
+
     let jugador1 = document.querySelectorAll("input")[0].value
     let jugador2 = document.querySelectorAll("input")[1].value
     if (jugador1 === jugador2){
@@ -58,6 +60,8 @@ function resultadoJuego() {
         contadorDerrotas = contadorDerrotas + 1
         document.querySelectorAll("input")[4].value = contadorDerrotas
     }
+    // document.cookie = `victoriasJ1 = ${contadorVictorias}`;
+    // document.cookie = `victoriasJ2 = ${contadorDerrotas}`
     return true
 }
 
@@ -94,3 +98,10 @@ function quitarColor() {
     document.querySelectorAll("button")[4].style.color = "black";
 
 }
+
+// let misCookie = document.cookie;
+// let victorias = misCookie.split('='[1])
+// if (victorias === undefined){
+//     document.cookie ="victoria0"
+//     document.cookie ="derrotas0"
+// }
